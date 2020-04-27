@@ -19,10 +19,46 @@ function renderTable () {
     <div class="cell">${ arSkaicius(newArray[i].income)  - arSkaicius(newArray[i].expense)} </div>
 </div>`
 document.querySelector('.table-content').insertAdjacentHTML("beforeend", HTML);
-}
 
 
 }
+
+document.querySelector('.table-footer').innerHTML = ``;
+ let HTML = `<div class="cell"></div>
+<div class="cell"></div>
+<div class="cell">${metuIn()} Eur</div>
+<div class="cell">${metuOut()}</div>
+<div class="cell">${metuBalance()}</div>
+`
+document.querySelector('.table-footer').innerHTML = HTML;
+
+
+}
+
+function metuBalance () {
+    let n = 0;
+    for(let i = 0; i < newArray.length ; i++) {
+        
+        n += arSkaicius(newArray[i].income)  - arSkaicius(newArray[i].expense);
+    }
+    return n;
+    }
+
+function metuOut () {
+    let n = 0;
+    for(let i = 0; i < newArray.length ; i++) {
+        n += arSkaicius(newArray[i].expense);
+    }
+    return n;
+    }
+function metuIn () {
+    let n = 0;
+    for(let i = 0; i < newArray.length ; i++) {
+        n += arSkaicius(newArray[i].income);
+    }
+    return n;
+    }
+
 
 function arSkaicius(a) {
     if(typeof a === "number") {
