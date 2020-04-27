@@ -35,6 +35,29 @@ document.querySelector('.table-footer').innerHTML = HTML;
 
 }
 
+function renderSummary() {
+    document.querySelector('.summary-list').innerHTML = '';
+    HTML = `     <div id="minIncome" class="value">Mėnesio pavadinimas</div>
+    <div class="title">mėnuo, kai buvo mažiausiai uždirbta,bet ne lygu nuliui</div>
+</div>
+<div class="item">
+    <div class="value">Mėnesio pavadinimas</div>
+    <div class="title">mėnuo, kai buvo daugiausiai uždirbta</div>
+</div>
+<div class="item">
+    <div class="value">Mėnesio pavadinimas</div>
+    <div class="title">mėnuo, kai buvo mažiausiai išlaidos, bet ne lygios nuliui</div>
+</div>
+<div class="item">
+    <div class="value">Mėnesio pavadinimas</div>
+    <div class="title">mėnuo, kai buvo didžiausios išlaidos</div>
+</div> `
+}
+
+
+
+
+
 function metuBalance () {
     let n = 0;
     for(let i = 0; i < newArray.length ; i++) {
